@@ -203,3 +203,61 @@ export default function Example() {
 ```js
 import App from './src/App';
 ```
+
+---
+
+## Compartilhar arquivo
+
+- Instale a dependencia:
+
+```bash
+yarn add react-native-share
+```
+
+- acessar a pasta `ios` e executar o comando:
+
+```bash
+pod install
+```
+
+- Para android:
+  - Abra o arquivo `android/app/src/main/java/[...]/MainApplication.java` e adicione os imports:
+
+  ```java
+    import cl.json.RNSharePackage;
+    import cl.json.ShareApplication;
+  ```
+
+  - Em `android/settings.gradle` adicione no final do arquivo:
+
+  ```java
+  include ':react-native-share'
+  project(':react-native-share').projectDir = new File(rootProject.projectDir, 	'../node_modules/react-native-share/android')
+  ```
+
+  - Em `android/app/build.gradle` no bloco de `dependencies` adicione:
+
+  ```java
+    implementation project(':react-native-share')
+  ```
+
+- No arquivo `src/App.js` importe a dependencia:
+
+```js
+import Share from 'react-native-share';
+```
+
+- Adicione o seguinte para compartilhar o arquivo:
+
+```js
+const optionsShare = {
+  url: 'file://' + file.filePath,
+};
+Share.open(optionsShare)
+  .then(res => {
+    console.log(res);
+  })
+  .catch(err => {
+    err && console.log(err);
+  });
+```

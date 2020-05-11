@@ -12,6 +12,8 @@ import RNFetchBlob from 'rn-fetch-blob';
 
 import RNHTMLtoPDF from 'react-native-html-to-pdf';
 
+import Share from 'react-native-share';
+
 export default function Example() {
   useEffect(() => {
     if (Platform.OS === 'android') {
@@ -59,9 +61,29 @@ export default function Example() {
     // console.log(file.filePath);
     if (Platform.OS === 'android') {
       RNFetchBlob.android.actionViewIntent(file.filePath, 'application/pdf');
-      alert(file.filePath);
+      const optionsShare = {
+        url: 'file://' + file.filePath,
+      };
+      Share.open(optionsShare)
+        .then(res => {
+          console.log(res);
+        })
+        .catch(err => {
+          err && console.log(err);
+        });
+      // alert(file.filePath);
     } else {
-      RNFetchBlob.ios.openDocument(file.filePath);
+      const optionsShare = {
+        url: 'file://' + file.filePath,
+      };
+      Share.open(optionsShare)
+        .then(res => {
+          console.log(res);
+        })
+        .catch(err => {
+          err && console.log(err);
+        });
+      // RNFetchBlob.ios.openDocument(file.filePath);
     }
     // RNFetchBlob.ios.previewDocument(file.filePath);
   }

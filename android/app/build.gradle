@@ -199,6 +199,8 @@ dependencies {
 
     implementation project(':react-native-html-to-pdf')
 
+    implementation project(':react-native-share')
+
     debugImplementation("com.facebook.flipper:flipper:${FLIPPER_VERSION}") {
       exclude group:'com.facebook.fbjni'
     }

@@ -12,6 +12,10 @@ import com.facebook.soloader.SoLoader;
 
 import com.christopherdro.htmltopdf.RNHTMLtoPDFPackage;
 
+import cl.json.RNSharePackage;
+
+import cl.json.ShareApplication;
+
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
