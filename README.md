@@ -7,6 +7,15 @@ https://github.com/joltup/rn-fetch-blob
 
 # React Native PDF
 
+- Referências:
+  - [react-native-html-to-pdf](https://github.com/christopherdro/react-native-html-to-pdf)
+  - [Open file downloaded within React-Native app with another app](https://stackoverflow.com/questions/56058142/open-file-downloaded-within-react-native-app-with-another-app)
+  - [rn-fetch-blob](https://github.com/joltup/rn-fetch-blob)
+  - [Error calling startActivity() on RNFetchBlob.android.actionViewIntent to intent files](https://github.com/joltup/rn-fetch-blob/issues/435)
+  - [react-native-pdf-lib](https://github.com/Hopding/react-native-pdf-lib)
+  - [The number of method references in a .dex file cannot exceed 64k API 17](https://stackoverflow.com/questions/36785014/the-number-of-method-references-in-a-dex-file-cannot-exceed-64k-api-17)
+
+
 - Iniciar um novo projeto
 
 ```bash
@@ -207,6 +216,8 @@ import App from './src/App';
 ---
 
 ## Compartilhar arquivo
+
+- Referência: [react-native-share](https://github.com/react-native-community/react-native-share)
 
 - Instale a dependencia:
 
